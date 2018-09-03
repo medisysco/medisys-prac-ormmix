@@ -12,6 +12,6 @@ import my.com.medisys.prac.ormmix.entity.Gender;
 public interface GenderService {
     List<Gender> findAll();
     List<Gender> selectAll();
-    Gender getByGenderCode(String genderCode);
+    Gender findByGenderCode(String genderCode);
     Gender selectByGenderCode(String genderCode);
 }

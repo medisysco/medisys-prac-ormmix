@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.com.medisys.prac.ormmix.mapper.MaritalStatusMapper"><!--
+================================================================================
+MaritalStatusMapper.xml
+================================================================================
+@author    Medisys<devs@medisys.com.my>
+@vendor    Medical Systems Co. Ltd
+@web       medisys.com.my
+@version   0.0.00.GA
+@since     0.0.00.GA
+================================================================================
+--> <resultMap id="MaritalStatusResultMap" type="MaritalStatus">
+        <result property="maritalStatusCode" column="marital_status_code"/>
+        <result property="maritalStatusName" column="marital_status_name"/>
+    </resultMap>
+    <select id="selectAll" resultMap="MaritalStatusResultMap"><![CDATA[
+        SELECT ms.*
+        FROM marital_status ms
+        WHERE 1=1
+    ]]>
+    </select>
+    <!-- http://www.mybatis.org/mybatis-3/configuration.html#typeAliases -->
+    <select id="selectByMaritalStatusCode" resultMap="MaritalStatusResultMap" parameterType="string"><![CDATA[
+        SELECT ms.*
+        FROM marital_status ms
+        WHERE ms.marital_status_code = #{maritalStatusCode}
+    ]]>
+    </select>
+</mapper>

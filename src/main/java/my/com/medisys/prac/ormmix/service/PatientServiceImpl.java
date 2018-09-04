@@ -2,6 +2,8 @@ package my.com.medisys.prac.ormmix.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,9 @@ import my.com.medisys.prac.ormmix.repository.PatientRepository;
 
 @Service
 public class PatientServiceImpl implements PatientService {
+
+    @SuppressWarnings("unused")
+    private static final Logger log = LoggerFactory.getLogger(PatientServiceImpl.class);
 
     @Autowired
     PatientRepository repo;
@@ -53,7 +58,7 @@ public class PatientServiceImpl implements PatientService {
 
     public Patient update(int patientNo, Patient patient) {
         Patient exist = repo.findOne(patientNo);
-        if (ObjectUtils.isEmpty(exist)) {
+        if (!ObjectUtils.isEmpty(exist)) {
             exist.setBirthDate(patient.getBirthDate());
             exist.setFathersName(patient.getFathersName());
             exist.setFirstName(patient.getFirstName());
@@ -70,7 +75,7 @@ public class PatientServiceImpl implements PatientService {
 
     public Patient delete(int patientNo) {
         Patient patient = repo.findOne(patientNo);
-        if (ObjectUtils.isEmpty(patient)) {
+        if (!ObjectUtils.isEmpty(patient)) {
             repo.delete(patient);
         }
         return patient;

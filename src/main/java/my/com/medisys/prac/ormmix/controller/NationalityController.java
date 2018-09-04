@@ -40,7 +40,7 @@ public class NationalityController {
     }
 
     @GetMapping("/{nationalityCode}")
-    public Map<String, Object> findByMaritalStatusCode(@PathVariable(value = "nationalityCode") String nationalityCode) {
+    public Map<String, Object> findByMaritalStatusCode(@PathVariable("nationalityCode") String nationalityCode) {
         Map<String, Object> res = new HashMap<String, Object>();
         //Nationality nationality = service.findByNationalityCode(nationalityCode);
         Nationality nationality = service.selectByNationalityCode(nationalityCode);

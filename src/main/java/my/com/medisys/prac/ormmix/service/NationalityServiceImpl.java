@@ -2,6 +2,8 @@ package my.com.medisys.prac.ormmix.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,9 @@ import my.com.medisys.prac.ormmix.repository.NationalityRepository;
  */
 @Service
 public class NationalityServiceImpl implements NationalityService{
+
+    @SuppressWarnings("unused")
+    private static final Logger log = LoggerFactory.getLogger(NationalityServiceImpl.class);
 
     @Autowired
     NationalityRepository repo;

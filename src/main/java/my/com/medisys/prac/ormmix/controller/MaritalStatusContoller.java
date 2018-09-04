@@ -40,7 +40,7 @@ public class MaritalStatusContoller {
     }
 
     @GetMapping("/{maritalStatusCode}")
-    public Map<String, Object> findByMaritalStatusCode(@PathVariable(value = "maritalStatusCode") String maritalStatusCode) {
+    public Map<String, Object> findByMaritalStatusCode(@PathVariable("maritalStatusCode") String maritalStatusCode) {
         Map<String, Object> res = new HashMap<String, Object>();
         //MaritalStatus maritalStatus = service.findByMaritalStatusCode(maritalStatusCode);
         MaritalStatus maritalStatus = service.selectByMaritalStatusCode(maritalStatusCode);

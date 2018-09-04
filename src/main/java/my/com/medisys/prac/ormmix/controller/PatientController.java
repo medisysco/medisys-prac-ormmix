@@ -50,7 +50,7 @@ public class PatientController {
         Map<String, Object> res = new HashMap<String, Object>();
         
         if(!ObjectUtils.isEmpty(patient))
-        log.info("Patient Birth Date : {}", patient.getBirthDate());
+            log.info("Patient Birth Date : {}", patient.getBirthDate());
         String message = ObjectUtils.isEmpty(patient) ? "No Record Found" : "One Record Found";
         
         res.put("message", message);

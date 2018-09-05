@@ -11,5 +11,9 @@ import my.com.medisys.prac.ormmix.entity.Patient;
  */
 public interface PatientMapper {
     List<Patient> selectAll();
+    List<Patient> selectByPatient(Patient patient);
     Patient selectByPatientNo(Integer patientNo);
+    void insert(Patient patient);
+    void update(Patient patient);
+    void delete(Integer patientNo);
 }

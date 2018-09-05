@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * @author    Medisys<devs@medisys.com.my>
  * @version   0.0.00.GA
@@ -43,6 +45,7 @@ public class Patient implements Serializable {
     @Column(name = "mothers_name")
     private String mothersName;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "birth_date")
     private Date birthDate;
